@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rituparna Satpathy | Android & Flutter Developer</title>
+    <meta name="description"
+        content="Portfolio of Rituparna Satpathy, an Android and Flutter Developer from Odisha, India.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dark-theme" x-data="{ mobileMenuOpen: false }">
+
+    <!-- Navigation -->
+    <nav class="navbar" x-data="{ scrolled: false }" @scroll.window="scrolled = (window.pageYOffset > 20)"
+        :class="{ 'scrolled': scrolled }">
+        <div class="container nav-container">
+            <a href="#" class="logo">RS<span class="accent-dot">.</span></a>
+
+            <!-- Desktop Menu -->
+            <div class="desktop-menu">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <button onclick="document.body.classList.toggle('dark-theme')" class="nav-link" style="background:none;border:none;cursor:pointer;font-size:1.1rem;margin-right:1rem;" aria-label="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="#contact" class="btn btn-primary">Contact Me</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="mobile-toggle">
+                <i class="fas" :class="mobileMenuOpen ? 'fa-times' : 'fa-bars'"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu" x-show="mobileMenuOpen" x-transition:enter="fade-enter"
+            x-transition:enter-start="fade-enter-start" x-transition:enter-end="fade-enter-end"
+            x-transition:leave="fade-leave" x-transition:leave-start="fade-leave-start"
+            x-transition:leave-end="fade-leave-end">
+            <div class="mobile-menu-links">
+                <a @click="mobileMenuOpen = false" href="#about">About</a>
+                <a @click="mobileMenuOpen = false" href="#skills">Skills</a>
+                <a @click="mobileMenuOpen = false" href="#projects">Projects</a>
+                <a @click="mobileMenuOpen = false" href="#experience">Experience</a>
+                <a onclick="document.body.classList.toggle('dark-theme')" style="cursor:pointer">Toggle Dark Mode</a>
+                <a @click="mobileMenuOpen = false" href="#contact" class="highlight">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="bg-pattern"></div>
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+
+        <div class="container hero-content">
+            <p class="greeting fade-in">HELLO, I AM</p>
+            <h1 class="hero-title fade-in delay-1">
+                Rituparna <span class="text-gradient">Satpathy</span>
+            </h1>
+            <p class="hero-subtitle fade-in delay-2">
+                Building seamless <span class="highlight">Android</span> & <span class="highlight">Flutter</span>
+                experiences with a passion for clean UI and scalable backend logic.
+            </p>
+            <div class="hero-buttons fade-in delay-3">
+                <a href="#projects" class="btn btn-outline">View My Work</a>
+                <a href="resume.pdf" target="_blank" class="btn btn-primary">
+                    <i class="fas fa-download" style="margin-right: 8px;"></i> Download Resume
+                </a>
+                <a href="#contact" class="btn btn-ghost">
+                    Let's Talk <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="scroll-indicator bounce">
+                <a href="#about" aria-label="Scroll down"><i class="fas fa-chevron-down"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-visual">
+                    <div class="avatar-card">
+                        <img src="profile.jpeg" alt="Rituparna Satpathy">
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="text-body fade-content">
+                        I am a <span class="highlight">Flutter developer</span> passionate about building real-world applications. Currently focusing on Data Structures & Algorithms and backend development to become a full-stack mobile developer.
+                    </p>
+                    <div class="about-details fade-content">
+                        <div class="detail-item">
+                            <h4>Current Focus</h4>
+                            <ul>
+                                <li><i class="fas fa-check text-accent"></i> Preparing for DSA and coding interviews</li>
+                                <li><i class="fas fa-check text-accent"></i> Building full-stack Flutter applications</li>
+                                <li><i class="fas fa-check text-accent"></i> Learning backend development</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="about-details">
+                        <div class="detail-item">
+                            <h4>Expertise</h4>
+                            <p>Mobile (Flutter/Android)</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Location</h4>
+                            <p>Odisha, India</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills-section">
+        <div class="container">
+            <h2 class="section-title text-center">Technical Arsenal</h2>
+
+            <div class="skills-grid fade-content">
+                <!-- Technical Skills -->
+                <div class="skill-card">
+                    <div class="icon-box mobile-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Technical Skills</h3>
+                    <div class="flex flex-wrap gap-2 tags">
+                        <span class="skill-tag">Flutter</span>
+                        <span class="skill-tag">Dart</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">Node.js</span>
+                    </div>
+                </div>
+
+                <!-- Core Skills -->
+                <div class="skill-card">
+                    <div class="icon-box tools-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Core Skills</h3>
+                    <div class="flex flex-wrap gap-2 tags">
+                        <span class="skill-tag">Data Structures</span>
+                        <span class="skill-tag">Algorithms</span>
+                        <span class="skill-tag">Problem Solving</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects-section" x-data="{ filter: 'all' }">
+        <div class="container">
+            <div class="projects-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="filter-buttons">
+                    <button @click="filter = 'all'" :class="{ 'active': filter === 'all' }">All</button>
+                    <button @click="filter = 'app'" :class="{ 'active': filter === 'app' }">Mobile Apps</button>
+                    <button @click="filter = 'data'" :class="{ 'active': filter === 'data' }">Data & Web</button>
+                </div>
+            </div>
+
+            <div class="projects-grid fade-content">
+
+                <!-- Graphium -->
+                <a href="https:graphium.space" target="_blank" class="project-card" x-show="filter === 'all' || filter === 'app'" x-transition>
+                    <div class="project-image">
+                        <img src="graphium.png" alt="Graphium" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'200\' fill=\'%23ccc\'%3E%3Crect width=\'100%25\' height=\'100%25\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23666\' font-size=\'20\' font-family=\'sans-serif\'%3EGraphium%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-header">
+                            <h3>Graphium</h3>
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <p>A platform for researchers to connect, collaborate, and share ideas. Built using the MERN stack, it features user profiles, collaboration tools, and messaging.</p>
+                        <div class="project-tags text-accent">
+                            <span>#MERN</span>
+                            <span>#React</span>
+                            <span>#Node.js</span>
+                            <span>#MongoDB</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- AgriConnect -->
+                <a href="https://github.com/rituparna982/AgriConnect" target="_blank" class="project-card" x-show="filter === 'all' || filter === 'app'" x-transition>
+                    <div class="project-image">
+                        <span class="winner-badge">IIT Bombay Hackathon</span>
+                        <img src="Agriconnect.jpeg" alt="AgriConnect" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'200\' fill=\'%23ccc\'%3E%3Crect width=\'100%25\' height=\'100%25\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23666\' font-size=\'20\' font-family=\'sans-serif\'%3EAgriConnect%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-header">
+                            <h3>AgriConnect</h3>
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <p>A smart agriculture platform connecting farmers with modern solutions. Built focusing on real-world agricultural problems.</p>
+                        <div class="project-tags text-accent">
+                            <span>#Flutter</span>
+                            <span>#Dart</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- VectorVolt -->
+                <a href="https://github.com/rituparna982/Vectorvolt" target="_blank" class="project-card" x-show="filter === 'all' || filter === 'app'" x-transition>
+                    <div class="project-image">
+                        <span class="winner-badge" style="background:#38bdf8">Nirma Silicon Hackathon</span>
+                        <img src="Vector.jpeg" alt="VectorVolt" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'200\' fill=\'%23ccc\'%3E%3Crect width=\'100%25\' height=\'100%25\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23666\' font-size=\'20\' font-family=\'sans-serif\'%3EVectorVolt%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-header">
+                            <h3>VectorVolt</h3>
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <p>An innovative tech solution focusing on energy/tech-based problem solving.</p>
+                        <div class="project-tags text-primary">
+                            <span>#SoftwareSolution</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Sneakershoe -->
+                <a href="https://github.com/rituparna982/Sneaker_shoe_app" target="_blank" class="project-card" x-show="filter === 'all' || filter === 'app'" x-transition>
+                    <div class="project-image">
+                        <img src="sneaker shoe.jpeg" alt="Sneakershoe" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'200\' fill=\'%23ccc\'%3E%3Crect width=\'100%25\' height=\'100%25\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23666\' font-size=\'20\' font-family=\'sans-serif\'%3ESneakershoe%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-header">
+                            <h3>Sneakershoe</h3>
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <p>An elegant and responsive e-commerce application focusing on sneaker retailing with modern UI animations and design.</p>
+                        <div class="project-tags text-primary">
+                            <span>#Flutter</span>
+                            <span>#eCommerce</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- AI Interview App -->
+                <a href="https://github.com/rituparna982/AI_Interview_App" target="_blank" class="project-card" x-show="filter === 'all' || filter === 'app'" x-transition>
+                    <div class="project-image">
+                        <img src="interview.jpeg" alt="AI Interview App" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'200\' fill=\'%23ccc\'%3E%3Crect width=\'100%25\' height=\'100%25\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23666\' font-size=\'20\' font-family=\'sans-serif\'%3EAI Interview App%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-header">
+                            <h3>AI Interview App</h3>
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <p>An intelligent application leveraging AI to conduct mock interviews, providing instant feedback and performance analytics to candidates.</p>
+                        <div class="project-tags text-accent">
+                            <span>#Flutter</span>
+                            <span>#AI</span>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Achievements -->
+    <section id="experience" class="section experience-section">
+        <div class="container">
+            <div class="experience-grid fade-content">
+                <!-- Hackathon Experience -->
+                <div class="timeline-col">
+                    <h2 class="section-title">Hackathon Experience</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="timeline-dot current"></span>
+                            <div class="timeline-date">Winner 🏆</div>
+                            <h3 class="timeline-role">Geogack2024</h3>
+                            <p class="timeline-desc">Built a geospatial solution and secured 1st place for innovative problem solving.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-dot"></span>
+                            <div class="timeline-date">Participant</div>
+                            <h3 class="timeline-role">IIT Bombay Hackathon</h3>
+                            <p class="timeline-desc">Worked on the AgriConnect project solving critical agriculture problems.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-dot"></span>
+                            <div class="timeline-date">Participant</div>
+                            <h3 class="timeline-role">Nirma Silicon Hackathon</h3>
+                            <p class="timeline-desc">Built the VectorVolt project focusing on innovative tech solutions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievements -->
+                <div class="achievements-col">
+                    <h2 class="section-title">Achievements</h2>
+                    <div class="achievements-list">
+                        <div class="achievement-card">
+                            <i class="fas fa-trophy achievement-icon"></i>
+                            <div>
+                                <h3>Winner</h3>
+                                <p>Geogack2024 Hackathon</p>
+                            </div>
+                        </div>
+                        <div class="achievement-card">
+                            <i class="fas fa-star achievement-icon"></i>
+                            <div>
+                                <a href="https://www.hackerrank.com/profile/satpathyritupar1" target="_blank" style="text-decoration: none; color: inherit; transition: color 0.3s;" onmouseover="this.style.color='#f8bbd0'" onmouseout="this.style.color='inherit'">
+                                    <h3>HackerRank SQL</h3>
+                                </a>
+                                <p>5 Stars Proficiency in Database Queries</p>
+                            </div>
+                        </div>
+                        <div class="achievement-card">
+                            <i class="fas fa-code achievement-icon"></i>
+                            <div>
+                                <a href="https://leetcode.com/u/Rituparna_Satpathy/" target="_blank" style="text-decoration: none; color: inherit; transition: color 0.3s;" onmouseover="this.style.color='#f8bbd0'" onmouseout="this.style.color='inherit'">
+                                    <h3>LeetCode</h3>
+                                </a>
+                                <p>Problem Solving & DSA Proficiency</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="contact-bg-effect"></div>
+        <div class="container contact-content">
+            <h2 class="section-title">Let's Connect</h2>
+            <p class="contact-text fade-content">
+                I am actively analyzing opportunities to grow and apply my skills. Feel free to reach out via Email or connect with my coding profiles!
+            </p>
+            <div class="flex flex-wrap justify-center gap-6 mb-12 fade-content">
+                <a href="mailto:rituparnasatpathy08@gmail.com" target="_blank" class="contact-btn group">
+                    <i class="fas fa-envelope group-hover:animate-bounce"></i> Email
+                </a>
+                <a href="https://www.linkedin.com/in/rituparna-satpathy-1b9636311/" target="_blank" class="contact-btn">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://github.com/rituparna982" target="_blank" class="contact-btn">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://www.hackerrank.com/profile/rituparnasatpath" target="_blank" class="contact-btn">
+                    <i class="fab fa-hackerrank"></i> HackerRank
+                </a>
+            </div>
+
+            <footer>
+                <p>&copy; 2025 Rituparna Satpathy. Built with <i class="fas fa-heart"></i> and Flutter.</p>
+            </footer>
+        </div>
+    </section>
+
+    <!-- Scroll Animation Script -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-content, .project-card').forEach((el) => {
+            el.classList.add('fade-in-scroll');
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>
